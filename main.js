@@ -10,12 +10,19 @@ function createSubContainer(mainContainer) {
     return subContainer
 }
 
+function rgb() {
+    r = Math.floor(Math.random() * 256)
+    g = Math.floor(Math.random() * 256)
+    b = Math.floor(Math.random() * 256)
+    return "rgb" + "(" + r + ", " + g + ", " + b +")"
+}
+
 function createBlock(subContainer) {
     const block = document.createElement("div")
     block.classList.add("block")
     subContainer.appendChild(block)
     block.addEventListener("mouseover", () => {
-        block.style.backgroundColor = "black";
+        block.style.backgroundColor = rgb();
     })
 }
 
