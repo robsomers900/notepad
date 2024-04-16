@@ -25,6 +25,7 @@ function createBlock(subContainer) {
 
 const button = document.createElement("button")
 button.textContent = "Insert Dimension Size"
+button.classList.add("button-74")
 mainContainer.appendChild(button)
 button.addEventListener("click", () =>{
     let dimension = prompt("Input Dimension");
@@ -33,7 +34,7 @@ button.addEventListener("click", () =>{
         dimension = prompt("Dimension Must Be 100 or Less. Input Dimension");
     }
     let rowDimension = dimension;
-
+    button.remove()
     while(rowDimension > 0){
         let colDimension = dimension;
         sub = createSubContainer(mainContainer)
