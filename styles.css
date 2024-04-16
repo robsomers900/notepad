@@ -1,0 +1,16 @@
+div.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+div.subContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    flex: 1;
+}
+div.block{
+    flex: 1;
+    background-color: white;
+}
