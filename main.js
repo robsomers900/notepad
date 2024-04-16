@@ -23,15 +23,25 @@ function createBlock(subContainer) {
 // createBlock(sub)
 // createBlock(sub)
 
-let dimension = 8;
-let rowDimension = dimension;
-
-while(rowDimension > 0){
-    let colDimension = dimension;
-    sub = createSubContainer(mainContainer)
-    while(colDimension > 0){
-        createBlock(sub);
-        colDimension --;
+const button = document.createElement("button")
+button.textContent = "Insert Dimension Size"
+mainContainer.appendChild(button)
+button.addEventListener("click", () =>{
+    let dimension = prompt("Input Dimension");
+    while(dimension >  100){
+        dimension = 0;
+        dimension = prompt("Dimension Must Be 100 or Less. Input Dimension");
     }
-    rowDimension --;
+    let rowDimension = dimension;
+
+    while(rowDimension > 0){
+        let colDimension = dimension;
+        sub = createSubContainer(mainContainer)
+        while(colDimension > 0){
+            createBlock(sub);
+            colDimension --;
+        }
+        rowDimension --;
 }
+})
+
