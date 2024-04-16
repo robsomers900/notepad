@@ -1,6 +1,6 @@
-mainContainer = document.createElement("div")
+const mainContainer = document.createElement("div")
 mainContainer.classList.add("mainContainer")
-body = document.querySelector("body")
+const body = document.querySelector("body")
 body.appendChild(mainContainer)
 
 function createSubContainer(mainContainer) {
@@ -11,8 +11,27 @@ function createSubContainer(mainContainer) {
 }
 
 function createBlock(subContainer) {
-    block = document.createElement("div")
+    const block = document.createElement("div")
     block.classList.add("block")
     subContainer.appendChild(block)
+    block.addEventListener("mouseover", () => {
+        block.style.backgroundColor = "black";
+    })
 }
 
+// sub = createSubContainer(mainContainer)
+// createBlock(sub)
+// createBlock(sub)
+
+let dimension = 8;
+let rowDimension = dimension;
+
+while(rowDimension > 0){
+    let colDimension = dimension;
+    sub = createSubContainer(mainContainer)
+    while(colDimension > 0){
+        createBlock(sub);
+        colDimension --;
+    }
+    rowDimension --;
+}
